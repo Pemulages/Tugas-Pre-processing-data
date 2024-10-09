@@ -26,7 +26,8 @@ df_cleaned.head(), missing_values
 # Mengisi missing values di kolom Gain dan Percent_Gain dengan rata-rata pada masing kolomny
 df_cleaned['Gain'] = df_cleaned['Gain'].fillna(df_cleaned['Gain'].mean())
 df_cleaned['Percent_Gain'] = df_cleaned['Percent_Gain'].fillna(df_cleaned['Percent_Gain'].mean())
-
+df_cleaned.replace([float('inf'), float('-inf')], pd.NA, inplace=True)
+df_cleaned.dropna(inplace=True)  # Jika ingin menghapus baris dengan nilai inf
 
 # Memeriksa kembali apakah masih ada missing values
 missing_values_after = df_cleaned.isnull().sum()
