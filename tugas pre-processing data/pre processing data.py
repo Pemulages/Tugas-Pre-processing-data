@@ -34,7 +34,10 @@ missing_values_after = df_cleaned.isnull().sum()
 df_cleaned.head(), missing_values_after
 
 # Utk Menampilkan 5 baris pertama dari dataset yang sudah diproses
-print(df_cleaned.head())
+# print(df_cleaned.head())
+
+# Utk Menampilkan semua kolom dari dataset yang sudah diproses
+print(df_cleaned)
 
 # Menampilkan informasi apakah masih ada missing values
 print("\nMissing values setelah pre-processing data:")
